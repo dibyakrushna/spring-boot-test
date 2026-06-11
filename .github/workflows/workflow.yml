@@ -80,7 +80,7 @@ jobs:
          port: ${{ secrets.VPS_PORT }}
          script: |
           #Navigate to app directory 
-          cd /${{ env.APP_NAME }} || mkdir -p /${{ env.APP_NAME }} && cd /${{ env.APP_NAME }}
+          cd /${{ env.APP_NAME }} || sudo mkdir -p /${{ env.APP_NAME }} && cd /${{ env.APP_NAME }}
           # Create .env file from secrets
            cat > .env << EOF
            DOCKER_USER_NAME=${{ secrets.DOCKER_USERNAME }}
