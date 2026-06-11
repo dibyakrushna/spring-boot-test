@@ -1,0 +1,7 @@
+name: Test-Spring-Boot
+services:
+  spring-boot:
+    container_name: ${APP_NAME}
+    image: ${DOCKER_USER_NAME}/${APP_NAME}:${APP_VER}
+    ports:
+      - 80:8080
