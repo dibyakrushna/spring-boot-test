@@ -28,7 +28,7 @@ public class LandingPageController {
         LandingDTO landingDTO = new LandingDTO();
         landingDTO.setAppName(this.appName);
         landingDTO.setAppVersion(this.appVersion);
-        landingDTO.setDeveloperName("DibyaKrushna Das");
+        landingDTO.setDeveloperName("DibyaKrushna");
         landingDTO.setActiveProfile(String.join( ", ", this.environment.getActiveProfiles()));
 
         return ResponseEntity.status(HttpStatus.OK).body(landingDTO);
