@@ -70,7 +70,7 @@ jobs:
          cache-from: type=gha
          cache-to: type=gha,mode=max
          build-args: |
-           PROFILE=default
+           PROFILE=dev
            APP_VER=${{ steps.extract_version.outputs.VERSION }}
      - name: Deploy to VPS
        uses: appleboy/ssh-action@v1.0.0
