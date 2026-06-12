@@ -66,9 +66,9 @@ jobs:
          context: .
          push: true
          tags: |
-           ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}:1.0.0
+           ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}:${{ steps.extract_version.outputs.VERSION  }}
          cache-from: type=gha
-         cache-to: type=gha,mode=mas
+         cache-to: type=gha,mode=max
          build-args: |
            PROFILE=dev
      - name: Deploy to VPS
@@ -87,7 +87,7 @@ jobs:
             cat > .env << EOF
           DOCKER_USER_NAME=${{ secrets.DOCKER_USERNAME }}
           APP_NAME=${{ env.APP_NAME }}
-          APP_VER=1.0.0
+          APP_VER=${{ steps.extract_version.outputs.VERSION }}
           EOF
           #Remove Old composer file
            rm docker-compose.yml
