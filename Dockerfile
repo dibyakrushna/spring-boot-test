@@ -23,7 +23,5 @@ COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 
 ENV ACTIVE_PROFILE=${PROFILE}
-ENV APP_NAME=Dibya
-ENV APP_VER=1.0.1
 
 ENTRYPOINT ["java","-Dspring.profiles.active=${ACTIVE_PROFILE}","-jar","app.jar"]
