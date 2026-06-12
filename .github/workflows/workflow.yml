@@ -82,6 +82,7 @@ jobs:
           #Navigate to app directory 
           sudo mkdir -p /${{ env.APP_NAME }}
           sudo chown -R $USER:$USER /${{ env.APP_NAME }}
+          cd /${{ env.APP_NAMES }}
           # Create .env file from secrets
             cat > .env << EOF
           DOCKER_USER_NAME=${{ secrets.DOCKER_USERNAME }}
