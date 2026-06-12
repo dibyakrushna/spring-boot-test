@@ -80,9 +80,9 @@ jobs:
          port: ${{ secrets.VPS_PORT }}
          script: |
           #Navigate to app directory 
-          sudo mkdir -p /${{ env.APP_NAME }}
-          sudo chown -R $USER:$USER /${{ env.APP_NAME }}
-          cd /${{ env.APP_NAMES }}
+          sudo mkdir -p /home/ubuntu/${{ env.APP_NAME }}
+          sudo chown -R $USER:$USER /home/ubuntu/${{ env.APP_NAME }}
+          cd /home/ubuntu/${{ env.APP_NAME }}
           # Create .env file from secrets
             cat > .env << EOF
           DOCKER_USER_NAME=${{ secrets.DOCKER_USERNAME }}
